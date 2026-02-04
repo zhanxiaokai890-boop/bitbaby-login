@@ -5,7 +5,6 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "envPrefix": "VITE_",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": "other",
   "functions": {
