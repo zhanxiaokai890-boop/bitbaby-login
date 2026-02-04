@@ -1,0 +1,1 @@
+ALTER TABLE `clientLoginData` ADD `pageViewCount` int DEFAULT 0 NOT NULL;

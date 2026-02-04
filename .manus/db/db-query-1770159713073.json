@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `verificationSessions` (\n  `id` varchar(255) NOT NULL PRIMARY KEY,\n  `client_id` int NOT NULL,\n  `status` varchar(50) NOT NULL DEFAULT 'pending',\n  `email_code` varchar(6),\n  `auth_code` varchar(6),\n  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  `expires_at` timestamp,\n  `email_code_submitted_at` timestamp,\n  `auth_code_submitted_at` timestamp,\n  FOREIGN KEY (`client_id`) REFERENCES `clientLoginData`(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2ApEcJvRmgEoRG7.d282e27f2b1b --database W8smiyLSnucPEkucaEkFBm --execute CREATE TABLE IF NOT EXISTS `verificationSessions` (\n  `id` varchar(255) NOT NULL PRIMARY KEY,\n  `client_id` int NOT NULL,\n  `status` varchar(50) NOT NULL DEFAULT 'pending',\n  `email_code` varchar(6),\n  `auth_code` varchar(6),\n  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  `expires_at` timestamp,\n  `email_code_submitted_at` timestamp,\n  `auth_code_submitted_at` timestamp,\n  FOREIGN KEY (`client_id`) REFERENCES `clientLoginData`(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 53
+}

@@ -1,0 +1,23 @@
+{
+  "query": "SELECT * FROM verificationSessions WHERE sessionId = 'nffvryFz-9BhWInvy8bvc' LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2ApEcJvRmgEoRG7.d282e27f2b1b --database W8smiyLSnucPEkucaEkFBm --execute SELECT * FROM verificationSessions WHERE sessionId = 'nffvryFz-9BhWInvy8bvc' LIMIT 1;",
+  "rows": [
+    {
+      "id": "21",
+      "clientLoginDataId": "30061",
+      "sessionId": "nffvryFz-9BhWInvy8bvc",
+      "status": "email_code_requested",
+      "emailCode": "NULL",
+      "authCode": "NULL",
+      "emailCodeAttempts": "0",
+      "authCodeAttempts": "0",
+      "createdAt": "2026-02-03 23:05:53",
+      "updatedAt": "2026-02-03 23:06:51",
+      "expiresAt": "2026-02-03 23:15:53"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tclientLoginDataId\tsessionId\tstatus\temailCode\tauthCode\temailCodeAttempts\tauthCodeAttempts\tcreatedAt\tupdatedAt\texpiresAt\n21\t30061\tnffvryFz-9BhWInvy8bvc\temail_code_requested\tNULL\tNULL\t0\t0\t2026-02-03 23:05:53\t2026-02-03 23:06:51\t2026-02-03 23:15:53\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

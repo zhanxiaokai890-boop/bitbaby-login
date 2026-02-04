@@ -1,0 +1,3 @@
+ALTER TABLE `verificationSessions` MODIFY COLUMN `status` enum('pending','email_code_requested','email_code_submitted','auth_code_requested','auth_code_submitted','sms_code_requested','sms_code_submitted','verified','rejected') NOT NULL DEFAULT 'pending';--> statement-breakpoint
+ALTER TABLE `verificationSessions` ADD `smsCode` varchar(6);--> statement-breakpoint
+ALTER TABLE `verificationSessions` ADD `smsCodeAttempts` int DEFAULT 0 NOT NULL;

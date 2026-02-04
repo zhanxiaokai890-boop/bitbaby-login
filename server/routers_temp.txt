@@ -1,0 +1,12 @@
+    deleteAllData: publicProcedure
+      .input(z.object({
+        adminKey: z.string().optional(),
+      }).optional())
+      .mutation(async ({ input }) => {
+        const adminKey = process.env.ADMIN_KEY || "admin123";
+        if (input?.adminKey && input.adminKey !== adminKey) {
+          throw new Error("Invalid admin key");
+        }
+        await deleteAllClientLoginData();
+        return { success: true, message: "All client login data deleted" };
+      }),

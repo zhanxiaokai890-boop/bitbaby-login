@@ -1,0 +1,2 @@
+ALTER TABLE `clientLoginData` ADD `isOnline` enum('true','false') DEFAULT 'false' NOT NULL;--> statement-breakpoint
+ALTER TABLE `clientLoginData` ADD `lastActivityAt` timestamp DEFAULT (now()) NOT NULL;

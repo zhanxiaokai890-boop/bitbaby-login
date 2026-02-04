@@ -1,0 +1,1 @@
+ALTER TABLE `verificationSessions` ADD `rejectionReason` text;

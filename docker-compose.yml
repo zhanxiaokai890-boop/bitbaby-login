@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: bitbaby-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: bitbaby_login
+      MYSQL_USER: bitbaby
+      MYSQL_PASSWORD: bitbaby_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # Application
+  app:
+    build: .
+    container_name: bitbaby-app
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: mysql://bitbaby:bitbaby_password@mysql:3306/bitbaby_login
+      JWT_SECRET: your_jwt_secret_key_here_change_in_production
+      ADMIN_KEY: admin123
+      VITE_APP_ID: your_app_id
+      OWNER_OPEN_ID: owner_id
+    ports:
+      - "3000:3000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: pnpm run dev
+
+volumes:
+  mysql_data:
+
+networks:
+  default:
+    name: bitbaby-network

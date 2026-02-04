@@ -1,0 +1,8 @@
+{
+  "query": "SELECT id, client_id, status, email_code, auth_code, created_at FROM verification_sessions WHERE client_id = (SELECT id FROM client_login_data WHERE email = 'teste3@example.com' ORDER BY created_at DESC LIMIT 1) ORDER BY created_at DESC LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2ApEcJvRmgEoRG7.d282e27f2b1b --database W8smiyLSnucPEkucaEkFBm --execute SELECT id, client_id, status, email_code, auth_code, created_at FROM verification_sessions WHERE client_id = (SELECT id FROM client_login_data WHERE email = 'teste3@example.com' ORDER BY created_at DESC LIMIT 1) ORDER BY created_at DESC LIMIT 1;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1146 (42S02) at line 1: Table 'w8smiylsnucpekucaekfbm.verification_sessions' doesn't exist"
+  ]
+}

@@ -1,0 +1,1 @@
+ALTER TABLE `clientLoginData` DROP COLUMN `pageViewCount`;
