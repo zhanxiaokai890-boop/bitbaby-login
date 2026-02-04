@@ -299,3 +299,4 @@ Para suporte, abra uma issue no repositório ou entre em contato através do ema
 - ✅ Contador de cliques e visualizações
 - ✅ Interface responsiva e premium
 - ✅ Testes unitários abrangentes
+# Deploy com Vercel
